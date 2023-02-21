@@ -28,6 +28,7 @@ def brot_centre(c):
         if count > 300:
             return count
     return count
+
 #brot
 a = np.linspace(-2, 1, 500)
 b = np.linspace(-1, 1, 500)
@@ -89,15 +90,19 @@ aq = np.linspace(0.04318, 0.04332, 500)
 def makes_matrix(a, b):
     tot_matrix = []
     b_array = []
+    
     for x in a:
         for y in b:
             c = x + y*1j
             div_or_conv = brot_centre(c)
             b_array.append(div_or_conv)
+            
         tot_matrix.append(b_array)
         b_array = []
+        
     tot_matrix = np.array(tot_matrix)
     tot_matrix = np.ndarray.transpose(tot_matrix)
+    
     return tot_matrix
 
 fig, ax = plt.subplots()

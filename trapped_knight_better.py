@@ -97,6 +97,8 @@ def trapped_knight_turn(board, position, count, banned_vals, square):
         number of iterations.
     banned_vals : list
         list of forbidden numbers on the chess board.
+    square : bool
+        True if we start in the middle of the board, False if we start in a corner
 
     Returns
     -------
@@ -189,6 +191,8 @@ def main(possible_moves, board, position, banned_vals, board_type):
         position coordinates (index of position).
     banned_vals : list
         list of forbidden numbers on the chess board.
+    board_type : bool
+        True if we start in the middle of the board, False if we start in a corner
 
     Returns
     -------
@@ -236,20 +240,14 @@ times = np.arange(0, len(real_xs))
 
 
 
-###
-# Create a set of line segments so that we can color them individually
-# This creates the points as a N x 1 x 2 array so that we can stack points
-# together easily to get the segments. The segments array for line collection
-# needs to be (numlines) x (points per line) x 2 (for x and y)
 points = np.array([real_xs, real_ys]).T.reshape(-1, 1, 2)
 segments = np.concatenate([points[:-1], points[1:]], axis=1)
 
 fig, ax1 = plt.subplots(1, 1, sharex=True, sharey=True)
 
-# Create a continuous norm to map from data points to colors
 norm = plt.Normalize(min(times), max(times))
 lc = LineCollection(segments, cmap='viridis', norm=norm)
-# Set the values used for colormapping
+
 lc.set_array(times)
 lc.set_linewidth(2)
 line = ax1.add_collection(lc)
@@ -258,4 +256,4 @@ fig.colorbar(line, ax=ax1)
 ax1.set_xlim(min(real_xs) - 1, max(real_xs) + 1)
 ax1.set_ylim(min(real_ys) - 1, max(real_ys) + 1)
 plt.show()
-###
+
