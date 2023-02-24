@@ -162,6 +162,8 @@ def better_prime_czecher(p):
     ----------
     p : int
         number you're checking to see if it's prime
+        - uses Miller-Rabin primality test with witness numbers 2, 3
+        works up to p = 1373653
 
     Returns
     -------
