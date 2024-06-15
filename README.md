@@ -12,7 +12,7 @@ Maths-related programs (written for fun):
 
 5. knights_tour: finds and plots a knight's tour (a Hamiltonian path of a knight on a chessboard).
 
-6. polys_over_Fp: collection of functions investigating polynomials over the field F_p. In particular, calculating the number of reducible (or irreducible) polynomials of degree k over F_p for a given natural number k and prime p. Another function ("norm") displays the proportion of reducible polynomials of degree k as p tends to infinity. 
+6. polys_over_Fp: collection of functions investigating polynomials over the field $\mathbb{F}_p$. In particular, calculating the number of reducible (or irreducible) polynomials of degree $k$ over $\mathbb{F}_p$ for a given natural number $k$ and prime $p$. Another function ("norm") displays the proportion of reducible polynomials of degree $k$ as $p$ tends to infinity. 
 
 7. primes_and_all_they_entail: collection of functions to do with prime numbers, including a generator of prime numbers, a function which checks whether a number is prime (using the Miller-Rabin primality test) and a function which tries to figure out which are the least reliable 'witness numbers' when using this test.
 
